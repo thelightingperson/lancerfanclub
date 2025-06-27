@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancer Fan Club - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('https://www.example.com/path-to-pixel-art-background.png'); /* Replace with actual pixel art background */
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #406080;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons a {
+            padding: 5px 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: white;
+            color: #406080;
+        }
+
+        main {
+            display: flex;
+            flex: 1; /* Makes main content take up remaining space */
+            margin-top: 80px; /* To clear the header */
+            padding: 20px;
+        }
+
+        .wiki-section {
+            flex: 3;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            color: black; /* Text color for white background */
+        }
+
+        .wiki-section h2 {
+            color: #406080;
+        }
+
+        .wiki-section p {
+            line-height: 1.6;
+        }
+
+        .wiki-section a {
+            color: #406080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .wiki-section a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar .section {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            color: black; /* Text color for white background */
+        }
+
+        .sidebar .section h3 {
+            color: #406080;
+            margin-top: 0;
+        }
+
+        .fake-chat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fake-chat h3 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #406080;
+        }
+
+        .fake-chat ul {
+            list-style: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .fake-chat li {
+            margin: 10px;
+            padding: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .fake-chat li:last-child {
+            border-bottom: none;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chat-input button {
+            padding: 5px 10px;
+            border: 1px solid #406080;
+            border-radius: 5px;
+            background-color: white;
+            color: #406080;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #406080;
+            color: white;
+        }
+
+        footer {
+            background-color: #406080;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .left {
+            text-align: left;
+        }
+
+        footer .right {
+            text-align: right;
+        }
+
+        footer a {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: white;
+            color: #406080;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #406080;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-buy:hover {
+            background-color: #406080;
+            color: white;
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://ih1.redbubble.net/image.763727595.4314/flat,800x800,075,f.u2.jpg" alt="Lancer Logo">
+            <h1>Lancer Fan Club</h1>
+        </div>
+        <nav>
+            <a href="https://example.com/">Home</a>
+            <a href="https://example.com/">Chat</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/topic%20lancer%20v2.html">Forums</a>
+            <a href="https://example.com/">About</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/lancer%205.html">Log In</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/sign%20up%20lmao.html">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="wiki-section">
+            <h2>About Lancer</h2>
+            <p>
+                Lancer is a character from the popular game <strong>Deltarune</strong>, created by Toby Fox. 
+                Known for his mischievous nature and childlike personality, he is the son of the King 
+                of Spades. Lancer brings humor and charm to the game with his antics and quirky dialogue.
+            </p>
+            <p>
+                To read more about Lancer, visit the 
+                <a href="https://deltarune.fandom.com/wiki/Lancer" target="_blank">Lancer Wiki Page</a>.
+            </p>
+            <a class="btn-buy" href="https://www.fangamer.com/products/deltarune-lancer-plush" target="_blank">
+                Buy Lancer Plush Now
+            </a>
+        </div>
+
+        <div class="sidebar">
+            <div class="section fake-chat">
+                <h3>&lt;lancer chat&gt;</h3>
+                <ul>
+                    <li><strong>Lancer:</strong> "Hey, wanna see me do a wheelie?"</li>
+                    <li><strong>Susie:</strong> "Lancer, that's not how wheels work."</li>
+                </ul>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message..." />
+                    <button onclick="showPopup()">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="left">
+            <p>&copy; 2024 Lancer Fan Club. Made by Lancer <em>and Berdly</em></p>
+        </div>
+        <div class="right">
+            <p><a href="https://example.com/">Privacy Policy</a></p>
+	</div>
+</body>
+</html>
