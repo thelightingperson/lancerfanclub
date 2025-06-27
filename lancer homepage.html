@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancer Fan Club - Home</title>
+    <style>
+        /* Updated styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('https://www.example.com/path-to-pixel-art-background.png'); /* Replace */
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #406080;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons a {
+            padding: 5px 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: white;
+            color: #406080;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .wiki-section {
+            flex: 3;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            color: black;
+        }
+
+        .wiki-section h2 {
+            color: #406080;
+        }
+
+        .wiki-section p {
+            line-height: 1.6;
+        }
+
+        .wiki-section a {
+            color: #406080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .wiki-section a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar .section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            color: black;
+        }
+
+        footer {
+            background-color: #406080;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .links {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer a {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        #search {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .update-box {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .update-box p {
+        margin: 0 0 10px 0;
+    }
+
+    .update-box button {
+        margin-right: 10px;
+        padding: 5px 10px;
+        border: 1px solid #406080;
+        border-radius: 5px;
+        background-color: white;
+        color: #406080;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .update-box button:hover {
+        background-color: #406080;
+        color: white;
+    }
+
+    .votes {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .comments {
+        color: #406080;
+    }
+
+    .about-section {
+        margin-top: 20px;
+    }
+
+    .wiki-section {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+    #search {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .update-box {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .update-box p {
+        margin: 0 0 10px 0;
+    }
+
+    .update-box button {
+        margin-right: 10px;
+        padding: 5px 10px;
+        border: 1px solid #406080;
+        border-radius: 5px;
+        background-color: white;
+        color: #406080;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .update-box button:hover {
+        background-color: #406080;
+        color: white;
+    }
+
+    .votes {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .comments {
+        color: #406080;
+    }
+
+    .wiki-section {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    .easter-egg-container {
+        text-align: center;
+        margin: 20px;
+    }
+
+    #ascii-lancer {
+        font-family: monospace;
+        color: #406080;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://ih1.redbubble.net/image.763727595.4314/flat,800x800,075,f.u2.jpg" alt="Lancer Logo">
+            <h1>Lancer Fan Club</h1>
+        </div>
+        <nav>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/lancer%20homepage.html">Home</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/topic%20lancer%20v2.html">Forums</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/contact.html">Contact</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/about.html">About</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/lancer%205.html">Log In</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/sign%20up%20lmao.html">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="community-section" style="flex: 3;">
+            <div class="section">
+                <h3>Community Updates</h3>
+                <input type="text" id="search" placeholder="Search updates..." onkeyup="filterUpdates()">
+                <div id="updates-list">
+                    <div class="update-box">
+                        <p>🎮 <strong>DELTARUNE Chapters 3–5:</strong> Development is accelerating on Chapters 3 and 4.</p>
+                        <button onclick="vote(this, 'up')">⬆️ Upvote</button>
+                        <button onclick="vote(this, 'down')">⬇️ Downvote</button>
+                        <span class="votes">0 votes</span>
+                        <span class="comments">💬 5 comments</span>
+                    </div>
+                    <div class="update-box">
+                        <p>✨ <strong>Spamton Sweepstakes:</strong> Raised $322,000 for charity!</p>
+                        <button onclick="vote(this, 'up')">⬆️ Upvote</button>
+                        <button onclick="vote(this, 'down')">⬇️ Downvote</button>
+                        <span class="votes">0 votes</span>
+                        <span class="comments">💬 3 comments</span>
+                    </div>
+                    <div class="update-box">
+                        <p>🎵 <strong>Music Previews:</strong> Check out the new sneak peeks on 
+                            <a href="https://deltarune.com/update-092022" target="_blank">DELTARUNE's official site</a>.
+                        </p>
+                        <button onclick="vote(this, 'up')">⬆️ Upvote</button>
+                        <button onclick="vote(this, 'down')">⬇️ Downvote</button>
+                        <span class="votes">0 votes</span>
+                        <span class="comments">💬 2 comments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="about-section" style="flex: 1;">
+            <div class="wiki-section">
+                <h2>About Lancer</h2>
+                <p>
+                    Lancer is a character from the popular game <strong>Deltarune</strong>, created by Toby Fox. 
+                    Known for his mischievous nature and childlike personality, he is the son of the King 
+                    of Spades. Lancer brings humor and charm to the game with his antics and quirky dialogue.
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="easter-egg-container">
+        <button onclick="toggleEasterEgg()">✨ Click for a surprise!</button>
+        <pre id="ascii-lancer" style="display: none;">
+             _____
+           /     \\
+          | () () |
+           \  ^  /
+            |||||
+            |||||
+        </pre>
+    </div>
+    
+    <footer>
+        <div>&copy; 2024 Lancer Fan Club. Powered by fans!</div>
+        <div class="links">
+            <a href="#">Privacy Policy</a>
+            <a href="file:///C:/Users/TheLightingPerson/OneDrive/Documents/lancer%20tos.html">ToS</a>
+        </div>
+    </footer>
+    <script>
+        // Filter updates based on search input
+        function filterUpdates() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const updates = document.querySelectorAll('.update-box');
+    
+            updates.forEach(update => {
+                const text = update.innerText.toLowerCase();
+                if (text.includes(searchInput)) {
+                    update.style.display = '';
+                } else {
+                    update.style.display = 'none';
+                }
+            });
+        }
+    
+        // Handle upvote/downvote functionality
+        function vote(button, type) {
+            const votesSpan = button.parentElement.querySelector('.votes');
+            let currentVotes = parseInt(votesSpan.textContent);
+    
+            if (type === 'up') {
+                currentVotes++;
+            } else if (type === 'down') {
+                currentVotes--;
+            }
+    
+            votesSpan.textContent = `${currentVotes} votes`;
+        }
+         // Toggle ASCII Lancer
+    function toggleEasterEgg() {
+        const lancerAscii = document.getElementById('ascii-lancer');
+        if (lancerAscii.style.display === 'none') {
+            lancerAscii.style.display = 'block';
+        } else {
+            lancerAscii.style.display = 'none';
+        }
+    }
+    </script>
+</body>
+</html>
